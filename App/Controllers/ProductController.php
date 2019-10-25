@@ -11,8 +11,9 @@ final class ProductController {
       'message' => 'Hello World'
     ]);
 
-    $storesDAO = new StoresDAO();
-    $storesDAO->teste();
+//    $storesDAO = new StoresDAO();
+//    $storesDAO->teste();
+
     return $response;
   }
 }

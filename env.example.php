@@ -1,10 +1,10 @@
 <?php
-putenv("DISPLAY_ERROS_DETAILS=" . false);
-putenv('store_db_host=');
-putenv('store_db_name=');
-putenv('store_db_user=');
-putenv('store_db_pass=');
-putenv('store_db_port=');
+putenv('DISPLAY_ERROS_DETAILS=' . true);
+putenv('STORE_DB_HOST=127.0.0.1');
+putenv('STORE_DB_PORT=3306');
+putenv('STORE_DB_NAME=store_db');
+putenv('STORE_DB_USER=root');
+putenv('STORE_DB_PASS=');
 
 
 

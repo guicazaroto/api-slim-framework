@@ -46,18 +46,18 @@ $app->delete("/produto", function(Request $request, Response $response, array $a
 });
 
 
-// // Middlewares
-// $md1 = function (Request $request, Response $response, $next) : Response {
-//     $response->getBody()->write("Executando Middleware 01....\n");
-//     $next($request, $response);
-//     return $response;
-// };
+// Middlewares
+$md1 = function (Request $request, Response $response, $next) : Response {
+    $response->getBody()->write("Executando Middleware 01....\n");
+    $next($request, $response);
+    return $response;
+};
 
-// $app->post("/produto", function(Request $request, Response $response, array $args) : Response {
-//     $data = $request->getParsedBody();
-//     $name = $data["name"];
-//     $response->getBody()->write("$name cadastrado com sucesso!"); 
-//     return $response;
-// })->add($md1);
+$app->post("/produto", function(Request $request, Response $response, array $args) : Response {
+    $data = $request->getParsedBody();
+    $name = $data["name"];
+    $response->getBody()->write("$name cadastrado com sucesso!"); 
+    return $response;
+})->add($md1);
 
 $app->run();

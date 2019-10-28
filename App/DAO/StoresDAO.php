@@ -39,7 +39,7 @@ class StoresDAO extends Conn {
             ]);
     }
 
-    public function updateStore (StoreModel $store)  {
+    public function updateStore (StoreModel $store) : void  {
         $stmt = $this
             ->pdo
             ->prepare('UPDATE stores 
@@ -56,7 +56,13 @@ class StoresDAO extends Conn {
         ]);
     }
 
-    public function deleteStore (int $id) {
+    public function deleteStore (int $id) : void {
+        $stmt = $this
+            ->pdo
+            ->prepare('DELETE FROM stores WHERE id = :id');
         
+        $stmt->execute([
+            "id" => $id
+        ]);
     }
 }

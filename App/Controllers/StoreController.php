@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 final class StoreController
 {
-    public function getStores(Request $request, Response $response, array $args): Response
+    public function getAllStores(Request $request, Response $response, array $args): Response
     {
         $stores = new StoresDAO();
         $stores = $stores->getAllStores();
@@ -17,7 +17,7 @@ final class StoreController
         return $response;
     }
 
-    public function insertStore (Request $request, Response $response, array $args) : Response {
+    public function createStore (Request $request, Response $response, array $args) : Response {
         
         $data = $request->getParsedBody();
 
@@ -55,8 +55,13 @@ final class StoreController
     }
 
     public function deleteStore (Request $request, Response $response, array $args) : Response {
+        
+        $data = $request->getParsedBody();
+        $storeDAO = new StoresDAO();
+        $storeDAO->deleteStore($data['id']);
+
         $response = $response->withJson([
-            'message' => 'Hello World'
+            'message' => 'Deleted successfully'
         ]);
         return $response;
     }

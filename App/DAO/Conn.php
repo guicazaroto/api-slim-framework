@@ -6,7 +6,7 @@ abstract class Conn {
 
     public function __construct()
     {
-        $host = getenv('store_db_host');
+        $host = getenv('STORE_DB_HOST');
         $port = getenv('STORE_DB_PORT');
         $dbname = getenv('STORE_DB_NAME');
         $user = getenv('STORE_DB_USER');

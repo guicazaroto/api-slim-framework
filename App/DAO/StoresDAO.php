@@ -22,7 +22,7 @@ class StoresDAO extends Conn {
             return $stores;
     }
 
-    public function insertStore (StoreModel $store) : void {
+    public function createStore (StoreModel $store) : void {
         $stmt = $this
             ->pdo
             ->prepare('INSERT INTO stores VALUE (

@@ -1,7 +1,6 @@
 <?php
 use function src\slimConfiguration;
 use App\Controllers\StoreController;
-use App\Controllers\ProductController;
 
 $app = new \Slim\App(slimConfiguration());
 

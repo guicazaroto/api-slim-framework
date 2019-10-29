@@ -26,7 +26,7 @@ final class StoreController
         $store->setName($data['name'])
             ->setPhone($data['phone'])
             ->setAddress($data['address']);
-        $storeDAO->insertStore($store);
+        $storeDAO->createStore($store);
 
         $response = $response->withJson([
             "message" => "insert successfully"
